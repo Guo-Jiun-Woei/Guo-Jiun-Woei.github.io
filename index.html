@@ -4,9 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>郭俊偉｜個人技術作品集</title>
+
 <style>
-* { box-sizing: border-box; }
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -43,6 +48,11 @@ h2 {
     padding-left: 12px;
 }
 
+h3 {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
 .card {
     background: white;
     border-radius: 12px;
@@ -58,19 +68,87 @@ h2 {
     gap: 20px;
 }
 
+.project-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.featured {
+    grid-column: 1 / -1;
+    border: 2px solid #93c5fd;
+}
+
 .tag {
     display: inline-block;
     background: #dbeafe;
     color: #1e40af;
     padding: 5px 12px;
-    margin: 4px;
+    margin: 4px 2px;
     border-radius: 6px;
     font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.pending {
+    background: #e2e8f0;
+    color: #64748b;
+}
+
+.skill-list {
+    padding-left: 24px;
+    margin: 15px 0;
+}
+
+.skill-list li {
+    margin-bottom: 6px;
 }
 
 a {
     color: #2563eb;
     text-decoration: none;
+}
+
+.project-link {
+    display: block;
+    background: #2563eb;
+    color: white;
+    padding: 13px 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.project-link:hover {
+    background: #1d4ed8;
+}
+
+.coming-soon {
+    background: #e2e8f0;
+    color: #64748b;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: auto;
+}
+
+.tags {
+    margin-bottom: 18px;
 }
 
 footer {
@@ -79,99 +157,305 @@ footer {
     padding: 25px;
     text-align: center;
 }
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 35px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- 網站標題 -->
+
 <header>
+
+    <p>IT ENGINEER PORTFOLIO</p>
+
     <h1>郭俊偉｜個人技術作品集</h1>
+
     <p>MIS 工程師 · 網路工程 · 系統管理</p>
-    <p>IT Engineer Portfolio</p>
+
 </header>
 
 <main>
 
+<!-- 個人介紹 -->
+
 <section>
+
     <h2>關於我 About Me</h2>
+
     <div class="card">
+
         <p>
         具備20年海軍服役經歷，曾擔任艦艇長及通資科長，
-        具備團隊管理、任務執行與問題處理能力。
+        具備團隊管理、任務執行、跨部門協調與問題處理能力。
         </p>
+
         <p>
         透過專業職業訓練及自主學習，培養網路架設、
-        Windows Server、Linux系統管理與資訊安全能力，
-        並持續透過實作專案累積技術經驗。
+        Windows Server、Linux 系統管理與資訊安全能力，
+        並持續透過虛擬化實驗環境（Home Lab）
+        累積資訊系統建置與管理經驗。
         </p>
+
+        <p>
+        本作品集主要呈現個人技術學習成果、實作操作流程、
+        系統設定、功能驗證及問題排除紀錄。
+        </p>
+
     </div>
+
 </section>
 
+<!-- 專業證照 -->
+
 <section>
+
     <h2>專業證照 Certifications</h2>
+
     <div class="card">
+
         <span class="tag">RHCSA</span>
+
         <span class="tag">網路架設乙級</span>
+
         <span class="tag">網路架設丙級</span>
+
         <span class="tag">ISO 27001 主導稽核員</span>
+
         <span class="tag">CCNA 準備中</span>
+
     </div>
+
 </section>
 
+<!-- 技術作品 -->
+
 <section>
+
     <h2>技術作品 Projects</h2>
 
     <div class="projects">
 
-        <article class="card">
-            <h3>01｜Windows Server 企業網域建置</h3>
-            <p>模擬企業資訊環境，建立網域、部門帳號、
-            群組原則及檔案伺服器權限。</p>
-            <span class="tag">AD DS</span>
-            <span class="tag">DNS</span>
-            <span class="tag">GPO</span>
-            <span class="tag">NTFS</span>
-            <p>專案紀錄整理中</p>
+        <!-- 作品01 Windows Server -->
+
+        <article class="card project-card featured">
+
+            <span class="status completed">
+                已完成 · 開放瀏覽
+            </span>
+
+            <h3>
+                01｜Windows Server 企業資訊系統建置與管理
+            </h3>
+
+            <p>
+                透過虛擬化實驗環境，模擬企業資訊系統的
+                建置與管理需求，進行 Windows Server
+                伺服器部署、網域管理、帳號管理、
+                網路服務、資源權限及憑證安全等實作。
+            </p>
+
+            <p>
+                本專案收錄個人實際操作過程、系統設定截圖
+                及技術文件，呈現 Windows Server
+                相關學習成果。
+            </p>
+
+            <strong>主要實作內容：</strong>
+
+            <ul class="skill-list">
+
+                <li>
+                    Windows Server 基礎環境與 DHCP 伺服器建置
+                </li>
+
+                <li>
+                    Active Directory 網域與使用者帳號管理
+                </li>
+
+                <li>
+                    GPO 群組原則與 NTFS 檔案存取權限管理
+                </li>
+
+                <li>
+                    DNS 網域名稱服務建置與解析測試
+                </li>
+
+                <li>
+                    IIS 企業網站伺服器建置與管理
+                </li>
+
+                <li>
+                    CA 數位憑證管理與 HTTPS 安全連線
+                </li>
+
+            </ul>
+
+            <div class="tags">
+
+                <span class="tag">Windows Server</span>
+                <span class="tag">AD DS</span>
+                <span class="tag">DHCP</span>
+                <span class="tag">DNS</span>
+                <span class="tag">GPO</span>
+                <span class="tag">NTFS</span>
+                <span class="tag">IIS</span>
+                <span class="tag">CA</span>
+                <span class="tag">SSL/TLS</span>
+
+            </div>
+
+            <a class="project-link"
+               href="windows-server/index.html">
+
+                查看完整作品與實作紀錄 →
+
+            </a>
+
         </article>
 
-        <article class="card">
+        <!-- 作品02 Cisco -->
+
+        <article class="card project-card">
+
+            <span class="status pending">
+                持續建置中
+            </span>
+
             <h3>02｜Cisco 企業網路架設</h3>
-            <p>規劃網路拓樸、部門網路隔離、
-            路由交換及網路存取控制。</p>
-            <span class="tag">VLAN</span>
-            <span class="tag">OSPF</span>
-            <span class="tag">ACL</span>
-            <span class="tag">NAT</span>
-            <p>專案紀錄整理中</p>
+
+            <p>
+                規劃企業網路拓樸、部門網路隔離、
+                路由交換、網路存取控制及網路服務設定。
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">VLAN</span>
+                <span class="tag">OSPF</span>
+                <span class="tag">ACL</span>
+                <span class="tag">NAT</span>
+                <span class="tag">LACP</span>
+
+            </div>
+
+            <div class="coming-soon">
+
+                專案紀錄整理中
+
+            </div>
+
         </article>
 
-        <article class="card">
+        <!-- 作品03 Linux -->
+
+        <article class="card project-card">
+
+            <span class="status pending">
+                持續建置中
+            </span>
+
             <h3>03｜Linux 伺服器管理</h3>
-            <p>透過虛擬化環境進行Linux伺服器建置、
-            服務部署及系統管理。</p>
-            <span class="tag">Rocky Linux</span>
-            <span class="tag">SSH</span>
-            <span class="tag">Nginx</span>
-            <span class="tag">Ansible</span>
-            <p>專案紀錄整理中</p>
+
+            <p>
+                透過虛擬化環境進行 Linux 伺服器建置、
+                系統管理、網路服務部署及自動化管理。
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">Rocky Linux</span>
+                <span class="tag">SSH</span>
+                <span class="tag">Nginx</span>
+                <span class="tag">Ansible</span>
+                <span class="tag">RHCSA</span>
+
+            </div>
+
+            <div class="coming-soon">
+
+                專案紀錄整理中
+
+            </div>
+
         </article>
 
-        <article class="card">
+        <!-- 作品04 資訊安全 -->
+
+        <article class="card project-card">
+
+            <span class="status pending">
+                持續建置中
+            </span>
+
             <h3>04｜資訊安全管理</h3>
-            <p>資訊安全管理制度、風險評估、
-            存取控制及稽核相關學習紀錄。</p>
-            <span class="tag">ISO 27001</span>
-            <span class="tag">ISMS</span>
-            <p>專案紀錄整理中</p>
+
+            <p>
+                資訊安全管理制度、風險評估、
+                存取控制、資安管理措施及稽核相關學習紀錄。
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">ISO 27001</span>
+                <span class="tag">ISMS</span>
+                <span class="tag">Risk Assessment</span>
+                <span class="tag">Audit</span>
+
+            </div>
+
+            <div class="coming-soon">
+
+                專案紀錄整理中
+
+            </div>
+
         </article>
 
     </div>
+
 </section>
 
 </main>
 
 <footer>
-    郭俊偉｜IT Engineer Portfolio
+
+    <p>郭俊偉｜IT Engineer Portfolio</p>
+
+    <p>個人技術學習與實作成果紀錄</p>
+
 </footer>
 
 </body>
